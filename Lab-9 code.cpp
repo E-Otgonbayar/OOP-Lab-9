@@ -105,3 +105,26 @@ public:
         cout << "---------------------------\n";
     }
 };
+int main() {
+    Division d1("IT"), d2("Management");
+
+    JobDescription jd1("Developer"), jd2("Team Lead"), jd3("Manager");
+
+    vector<JobDescription*> jobs1 = { &jd1, &jd2 };
+    vector<JobDescription*> jobs2 = { &jd3 };
+
+    Employee e1("Otgonbayar", "123456", 30, "C001", "Engineer", "2020-01-01", &d1, jobs1);
+    Employee e2("Telmuun", "789101", 28, "C002", "Manager", "2021-05-15", &d2, jobs2);
+
+    Spouse s1("Munhjin", "222333", 29, "2019-06-20");
+    e1.setSpouse(&s1);
+
+    Child c1("Bayaraa", "999000", 5, "Lego Togloom"), c2("Temuujin", "888777", 3, "Uraldaanii mashin");
+    e1.addChild(c1);
+    e1.addChild(c2);
+
+    e1.print();
+    e2.print();
+
+    return 0;
+}
